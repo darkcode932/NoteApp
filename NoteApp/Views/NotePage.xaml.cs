@@ -31,7 +31,7 @@ public partial class NotePage : ContentPage
         if (BindingContext is Models.Note note)
             File.WriteAllText(note.Filename, TextEditor.Text);
 
-        await Shell.Current.GoToAsync("..");
+        await Shell.Current.GoToAsync(".."); //permet de rentrer d'une page comme dans l'invite de commande
     }
 
     private async void DeleteButton_Clicked(object sender, EventArgs e)

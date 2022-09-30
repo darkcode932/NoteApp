@@ -21,10 +21,10 @@ public partial class AllNotesPage : ContentPage
 
     private async void notesCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (e.CurrentSelection.Count != 0)
+        if (e.CurrentSelection.Count != 0) //permet de se rassurer qu'on a cliqué pour une nouvelle note
         {
             // Get the note model
-            var note = (Models.Note)e.CurrentSelection[0];
+            var note = (Models.Note)e.CurrentSelection[0]; //on récupère la note
 
             // Should navigate to "NotePage?ItemId=path\on\device\XYZ.notes.txt"
             await Shell.Current.GoToAsync($"{nameof(NotePage)}?{nameof(NotePage.ItemId)}={note.Filename}");
